@@ -5,9 +5,10 @@
 
 .app {
   font: var(--font-m);
-  background: var(--second-bg-color);
+  background: var(--bg-color);
   color: var(--text-color);
   min-height: 100vh;
+  box-sizing: border-box;
 }
 
 .content-page {
@@ -16,14 +17,10 @@
 
 .page-wrapper {
   flex-grow: 1;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 button {
   cursor: pointer;
-}
-.btn {
-  padding: 10px 20px;
-  border-radius: var(--border-radius);
-  font: var(--font-m);
+  color: var(--text-color);
 }
