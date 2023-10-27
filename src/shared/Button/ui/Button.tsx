@@ -33,7 +33,9 @@ export const Button  = (props: ButtonProps) => {
     <button
       className={cn(cls.Button, className,
         cls[`Variant-${variant}`],
-        cls[`Size-${size}`]
+        cls[`Size-${size}`],
+        {[cls.LeftIcon]: leftIcon}
+
       )}>
       {children}
     </button>
