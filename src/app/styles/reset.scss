@@ -13,3 +13,10 @@ select {
   border: none;
   background: none;
 }
+
+a {
+  text-decoration: none;
+}
+li, ol {
+  list-style-type: none;
+}

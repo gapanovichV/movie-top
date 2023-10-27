@@ -3,33 +3,34 @@ import {createBrowserRouter, RouterProvider,} from "react-router-dom";
 import {useTheme} from "app/providers/ThemeProviders";
 import cn from "classnames";
 import './styles/index.scss';
-import { Button } from "shared/Button";
-import {VariantButton, SizeButton} from "shared/Button";
+import {Main} from "pages/Main";
 
-
-interface AppProps {
-    className?: string
+export enum RoutePath  {
+  MAIN = '/',
+  LOGIN = '/login',
+  PROFILE = '/profile'
 }
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <div>Hello world!</div>,
+    path: RoutePath.MAIN,
+    element: <Main />,
   },
   {
-    path: '/login',
+    path: RoutePath.LOGIN,
     element: <div>Login</div>
+  },
+  {
+    path: RoutePath.PROFILE,
+    element: <div>PROFILE</div>
   }
 ]);
 
-export const App  = ({className}: AppProps) => {
+export const App  = () => {
   const { theme } = useTheme()
   return (
     <div className={cn('app', theme)}>
       <RouterProvider router={router} />
-      <Button variant={VariantButton.EMPTY} size={SizeButton.SMALL}>
-        Primary Button
-      </Button>
     </div>
   );
 }
